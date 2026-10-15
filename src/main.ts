@@ -1,6 +1,7 @@
 import './style.css';
 import './typography.css';
 import './print.css';
+import './counter';
 import { printSheet, fitPrintSheet } from './print';
 import cities from './cities.json';
 import { calculate, ELEMENTS, STEMS, japanDate, type BirthInput, type Reading, type Pillar, type Luck } from './engine';
