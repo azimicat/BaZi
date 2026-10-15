@@ -1,4 +1,6 @@
 import './style.css';
+import './print.css';
+import { printSheet, fitPrintSheet } from './print';
 import cities from './cities.json';
 import { calculate, ELEMENTS, STEMS, japanDate, type BirthInput, type Reading, type Pillar, type Luck } from './engine';
 import { natures, starMeanings, type Nature, type StarMeaning } from './content';
@@ -70,9 +72,10 @@ function renderReading(reading: Reading, input: BirthInput, birthplace: City): v
     <section class="reading-block" id="fortune"><h3><span>05.</span>これからの、季節。</h3><div class="annual-lead"><span class="year-kicker">${reading.currentYear} — YEARLY THEME ／ ${annual.pillar.label}・${annual.pillar.star}</span><h4>${yearMeaning.theme}</h4><p>${yearMeaning.text}</p></div><p class="table-note">年運は各年の立春から翌年の立春まで。現在の年運から10年分を表示しています。年を開くと、その年のテーマを読めます。</p><div class="year-list">${reading.annual.map((item: Reading['annual'][number]): string => `<details><summary><b>${item.year}</b>${item.pillar.label}　${starMeanings[item.pillar.star].theme}</summary><p>${item.pillar.star} ／ ${starMeanings[item.pillar.star].text}</p></details>`).join('')}</div></section>
     <section class="reading-block" id="long-fortune"><h3><span>06.</span>10年ごとの、運の流れ。</h3><p class="luck-intro">${reading.forward ? '順行' : '逆行'} ／ 大運の開始は約${ageLabel(reading.startAge)}。${input.time === null ? `時刻不明による範囲は約${ageLabel(reading.startRange[0])}〜${ageLabel(reading.startRange[1])}です。節入りで順逆が変わる候補では、大運の並び自体も変わります。` : ''}</p><p class="table-note">開始年齢から10年間ずつのテーマです。西暦は生年に開始年齢を足した概算で、誕生日や交運日とは一致しないことがあります。開始前の年齢には、大運はまだ割り当てていません。</p><ol class="luck-list">${reading.luck.map((item: Luck): string => { const current: boolean = currentAge >= item.age && currentAge < item.age + 10; return `<li class="${current ? 'current' : ''}"><span class="luck-kanji">${item.pillar.label}</span><div><p>約${ageLabel(item.age)}から${current ? '<span class="current-label">いまの大運</span>' : ''}</p><small>西暦 約${Math.floor(item.year)}年〜 ／ ${item.pillar.star}</small><p>${starMeanings[item.pillar.star].theme}</p></div></li>`; }).join('')}</ol></section>
     <p class="reading-footnote">鑑定文は日干と通変星を中心にした説明です。命式全体の吉凶や未来の出来事を確定するものではありません。<a href="#methods">計算方法と鑑定の範囲</a></p>`;
+  result.insertAdjacentHTML('beforeend', printSheet(reading, input, `${birthplace.prefecture} ${birthplace.name}`));
   result.hidden = false;
   element('#edit-reading').addEventListener('click', (): void => { form.scrollIntoView({block:'start'}); date.focus({preventScroll:true}); });
-  element('#print-reading').addEventListener('click', (): void => { window.print(); });
+  element('#print-reading').addEventListener('click', (): void => { fitPrintSheet(element('.print-sheet')); window.print(); });
   result.focus({preventScroll:true});
   result.scrollIntoView({block:'start'});
 }
@@ -99,4 +102,9 @@ form.addEventListener('submit', (event: SubmitEvent): void => {
     error.textContent = reason instanceof Error ? reason.message : '鑑定を表示できませんでした。入力内容をご確認ください。';
     error.hidden = false;
   }
+});
+
+window.addEventListener('beforeprint', (): void => {
+  const sheet: HTMLElement | null = result.querySelector('.print-sheet');
+  if (sheet !== null && !result.hidden) fitPrintSheet(sheet);
 });
