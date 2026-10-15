@@ -1,0 +1,11 @@
+{
+  "source": "https://msearch.gsi.go.jp/address-search/AddressSearch",
+  "retrieved": "2026-10-15",
+  "remove": ["浜松市中区", "浜松市東区", "浜松市西区", "浜松市南区", "浜松市北区", "浜松市浜北区"],
+  "cities": [
+    {"prefecture":"東京都","name":"利島村","longitude":139.28195},
+    {"prefecture":"熊本県","name":"球磨郡湯前町","longitude":130.98099},
+    {"prefecture":"静岡県","name":"浜松市中央区","longitude":137.72630},
+    {"prefecture":"静岡県","name":"浜松市浜名区","longitude":137.78316}
+  ]
+}

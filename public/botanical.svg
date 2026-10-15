@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" fill="none">
+<defs>
+ <g id="leaf"><path d="M0 0C-39-47-58-19-39-2C-24 10-9 4 0 0Z" fill="#899582"/><path d="M0 0-39-18" stroke="#677764" stroke-width="1"/></g>
+ <g id="bud"><path d="M0 14C-24 3-34-18-20-29C-8-39 1-20 0-5C2-27 18-37 27-24C35-11 15 7 0 14Z" fill="#d3a0a3"/><path d="M0 17 0-4" stroke="#a87780"/></g>
+ <g id="flower">
+  <path d="M0-7C-58-39-58-87-21-85C-2-84 2-55 1-25C7-70 34-87 53-63C73-37 33-13 10-6C52-25 83-7 70 18C57 43 21 25 8 12C34 43 29 74 4 69C-23 64-17 31-8 12C-29 45-65 39-66 15C-67-10-33-17-9-6Z" fill="#ebc1b5"/>
+  <path d="M-15-65-4-13M39-48 7-10M48 10 12 4M5 47 1 11M-42 13-12 3" stroke="#ce9a92" stroke-width="1.2"/>
+  <circle r="12" fill="#b49363"/><g fill="#f8ecd4"><circle cx="-5" cy="-3" r="2"/><circle cx="5" cy="-4" r="2"/><circle cy="5" r="2"/></g>
+ </g>
+ <g id="daisy">
+  <g fill="#f8f1df"><ellipse cy="-26" rx="9" ry="24"/><ellipse cy="26" rx="9" ry="24"/><ellipse cx="-26" rx="24" ry="9"/><ellipse cx="26" rx="24" ry="9"/><ellipse transform="rotate(45)" cy="-26" rx="9" ry="24"/><ellipse transform="rotate(-45)" cy="-26" rx="9" ry="24"/><ellipse transform="rotate(45)" cy="26" rx="9" ry="24"/><ellipse transform="rotate(-45)" cy="26" rx="9" ry="24"/></g><circle r="12" fill="#cbb371"/><circle r="6" fill="#b99c60"/>
+ </g>
+</defs>
+<path d="M302 730C285 550 237 370 145 165M302 730C350 540 403 337 447 160M302 730C290 491 325 314 314 106M302 730C231 588 165 488 93 422M302 730C376 603 453 540 508 474" stroke="#73826f" stroke-width="3"/>
+<path d="M239 468C188 397 136 349 70 315M343 489C406 415 463 373 526 349M293 400C277 318 248 276 221 244M328 351C375 283 402 248 419 204" stroke="#73826f" stroke-width="2"/>
+<use href="#leaf" transform="translate(274 601) rotate(20) scale(1.7)"/><use href="#leaf" transform="translate(324 622) rotate(148) scale(1.5)"/>
+<use href="#leaf" transform="translate(249 515) rotate(15) scale(1.2)"/><use href="#leaf" transform="translate(348 531) rotate(165) scale(1.5)"/>
+<use href="#leaf" transform="translate(294 456) rotate(162) scale(1.2)"/><use href="#leaf" transform="translate(277 346) rotate(8) scale(1.2)"/>
+<use href="#leaf" transform="translate(195 293) rotate(20)"/><use href="#leaf" transform="translate(402 324) rotate(150) scale(1.3)"/>
+<use href="#leaf" transform="translate(316 232) rotate(160) scale(.95)"/><use href="#leaf" transform="translate(200 575) rotate(2) scale(1.2)"/>
+<use href="#leaf" transform="translate(435 551) rotate(153) scale(.9)"/><use href="#leaf" transform="translate(163 390) rotate(165) scale(.7)"/>
+<use href="#flower" transform="translate(145 165) rotate(-15) scale(1.06)"/>
+<use href="#flower" transform="translate(447 160) rotate(27) scale(.88)"/>
+<use href="#flower" transform="translate(93 422) rotate(-35) scale(.66)"/>
+<use href="#daisy" transform="translate(314 106) rotate(12)"/>
+<use href="#daisy" transform="translate(508 474) rotate(-20) scale(.8)"/>
+<use href="#bud" transform="translate(70 315) rotate(-40)"/>
+<use href="#bud" transform="translate(526 349) rotate(35)"/>
+<use href="#bud" transform="translate(221 244) rotate(-30) scale(.85)"/>
+<use href="#daisy" transform="translate(419 204) scale(.48)"/>
+<path d="M280 691C295 698 310 701 325 700M284 706C299 713 313 714 323 713" stroke="#b69970" stroke-width="5"/>
+</svg>

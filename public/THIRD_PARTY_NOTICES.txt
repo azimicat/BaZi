@@ -1,0 +1,43 @@
+四季の命式 — ライセンスと出典
+
+1. 暦計算
+lunar-javascript 1.7.7
+https://github.com/6tail/lunar-javascript
+節入り時刻を算出し、1899〜2101年の各月の節入りのみを収録。
+
+MIT License
+
+Copyright (c) 2018 6tail
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+2. 市区町村と代表経度
+Geolonia 住所データ（取得日: 2026-10-15）
+https://github.com/geolonia/japanese-addresses
+https://geolonia.github.io/japanese-addresses/latest.csv
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/deed.ja
+変更内容: 市区町村名で集約し、町丁目の経度を算術平均して小数点以下5桁に丸めた。元の町丁目住所や緯度は含まない。
+補完: 国土地理院 地理院地図の住所検索（取得日: 2026-10-15）。利島村、湯前町、浜松市中央区、浜名区の代表地点の経度を使用。浜松市の旧6区を除外。
+https://msearch.gsi.go.jp/address-search/AddressSearch
+国土地理院コンテンツ利用規約: https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html
+
+原出典: 国土交通省 位置参照情報、日本郵便 郵便番号情報。
+
+3. デザイン
+草花のSVGはこのサイト向けの独自制作。Haruulalaの写真、ロゴ、イラストは使用していません。
