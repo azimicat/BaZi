@@ -1,3 +1,4 @@
+import { sessionCounts } from './counter-session';
 // Fixed URL: never include form values, query strings or the referrer.
 const publicUrl = new URL('https://www.azimicat.dev/BaZi/');
 const counter = document.querySelector<HTMLAnchorElement>('.visit-counter');
@@ -7,11 +8,13 @@ if (counter && text) {
   if (location.origin === publicUrl.origin && location.pathname === publicUrl.pathname) {
     const endpoint = new URL('https://hitscounter.dev/api/hit');
     endpoint.search = new URLSearchParams({ url: publicUrl.href, output: 'json', tz: 'Asia/Tokyo' }).toString();
-    void fetch(endpoint, { credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store', signal: AbortSignal.timeout(8000) })
-      .then(async response => {
+    void Promise.resolve().then(() => sessionCounts(sessionStorage, async () => {
+        const response = await fetch(endpoint, { credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store', signal: AbortSignal.timeout(8000) });
         if (!response.ok) throw new Error('Counter unavailable');
-        const counts = await response.json();
-        if (![counts.today_hits, counts.total_hits].every(value => Number.isSafeInteger(value) && value >= 0)) return;
+        return response.json();
+      }))
+      .then(counts => {
+        if (!counts) return;
         text.textContent = `views ${counts.today_hits.toLocaleString()} / ${counts.total_hits.toLocaleString()}`;
         counter.setAttribute('aria-label', `アクセス数：今日 ${counts.today_hits}、累計 ${counts.total_hits}`);
         counter.hidden = false;
