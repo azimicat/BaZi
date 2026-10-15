@@ -1,0 +1,127 @@
+/* 画面は本文17px、操作16px、補足14pxを基本にする。A4の組版には適用しない。 */
+@media screen {
+  :root {
+    --text-body: 1.0625rem;
+    --text-ui: 1rem;
+    --text-note: .875rem;
+  }
+
+  body { font-size: var(--text-ui); }
+  .hero-description,
+  .intro p:not(.eyebrow),
+  .form-intro > p:not(.eyebrow),
+  .reading-block > p,
+  .nature-panel p:not(.eyebrow),
+  .annual-lead p,
+  .year-list details p,
+  .methods details > div,
+  .warning-box {
+    font-size: var(--text-body);
+    line-height: 1.85;
+    letter-spacing: .02em;
+  }
+
+  .site-header nav,
+  .primary-link,
+  .field > label:first-child,
+  .field legend,
+  .radio-group span,
+  .checkbox-label,
+  .field input[type=date],
+  .field input[type=time],
+  .location-grid select,
+  select,
+  .submit-button,
+  .form-error,
+  .text-button,
+  .result-nav,
+  .year-list summary,
+  .luck-list p,
+  .methods summary,
+  .practice {
+    font-size: var(--text-ui);
+    line-height: 1.7;
+    letter-spacing: .02em;
+  }
+
+  .hero-note,
+  .privacy-note,
+  .field-hint,
+  .sub-label,
+  .submit-note,
+  .result-heading .birth-summary,
+  .table-note,
+  .element-item small,
+  .luck-list small,
+  .current-label,
+  .reading-footnote,
+  body > footer p,
+  body > footer a,
+  body > footer > a:last-child {
+    font-size: var(--text-note) !important;
+    line-height: 1.75 !important;
+    letter-spacing: .01em;
+  }
+
+  .required { font-size: var(--text-note); line-height: 1.5; }
+  .eyebrow, .form-intro .eyebrow, .annual-lead .year-kicker, .closing small {
+    font-size: .75rem;
+    line-height: 1.6;
+  }
+  .pillar-table,
+  .pillar-table th,
+  .pillar-table td,
+  .pillar-table th:first-child {
+    font-size: var(--text-note);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+  .pillar-table th, .pillar-table td { padding: 13px 4px; }
+  .pillar-table .kanji { font-size: 1.875rem; }
+  .year-list summary { padding-right: 28px; }
+  .year-list summary b { font-size: 1.25rem; }
+  .luck-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .luck-list li { min-width: 0; align-items: flex-start; }
+  .luck-list small { display: block; }
+  .result-nav a, .text-button { min-height: 44px; display: inline-flex; align-items: center; }
+  .text-button { padding: 7px 0; }
+  .radio-group input { top: 23px; }
+  .checkbox-label { min-height: 44px; }
+  .submit-button { height: auto; min-height: 65px; padding-top: 16px; padding-bottom: 16px; }
+  .nature-panel { min-height: 0; }
+  .reading-footnote a, .methods a { overflow-wrap: anywhere; }
+
+  @media (max-width: 900px) {
+    .hero h1 { font-size: clamp(1.875rem, 4.1vw, 2.3125rem); }
+    .form-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; }
+    .location-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .site-header { padding-right: 16px; padding-left: 16px; }
+    .brand { font-size: 1.25rem; letter-spacing: .1em; gap: 7px; }
+    .nav-cta span { margin-left: 8px; }
+    .hero h1 { font-size: clamp(1.8125rem, 9vw, 2.1875rem); }
+    .hero-copy { padding-right: 24px; padding-left: 24px; }
+    .primary-link { max-width: none; }
+    .hero-description br { display: none; }
+    .form-intro img { width: 80px; height: 140px; right: 0; }
+    .form-intro h2 { position: relative; z-index: 1; }
+    .form-intro .privacy-note { position: relative; }
+    .result-toolbar { flex-wrap: wrap; column-gap: 20px; row-gap: 6px; }
+    .result-nav { column-gap: 20px; row-gap: 0; }
+    .result-heading .birth-summary { overflow-wrap: anywhere; }
+    .nature-panel h3 { font-size: 1.5rem; max-width: none; }
+    .nature-panel .nature-symbol { opacity: .6; }
+    .reading-block h3 { font-size: 1.375rem; }
+    .pillar-table th, .pillar-table td { padding: 12px 2px; }
+    .pillar-table th:first-child { width: 19%; }
+    .luck-list, .year-list { grid-template-columns: 1fr; }
+    .luck-list li { padding: 16px; gap: 16px; }
+    .luck-list .luck-kanji { font-size: 1.75rem; }
+    .practice { align-items: flex-start; }
+    .annual-lead h4 { font-size: 1.5rem; }
+    .methods summary { padding-top: 20px; padding-bottom: 20px; }
+    .closing small { letter-spacing: .06em; }
+  }
+}

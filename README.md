@@ -138,3 +138,11 @@ pnpm generate:og
 出生時刻不明などの注意文がある場合も注意文を残し、印刷範囲に合わせて縮尺を調整します。
 印刷設定はA4、縦向きを選んでください。
 画面用の表示と印刷用の表示は `src/print.ts` と `src/print.css` で分けています。
+
+## 画面の文字サイズ
+
+鑑定文と紹介文は17px、入力欄と操作は16px、補足文と命式表は14pxを基準にしています。
+本文の行高は文字サイズの1.85倍です。
+文字サイズはremで指定し、スマホでも本文を縮小しません。
+`src/typography.css` は画面専用で、A4印刷用の組版には適用しません。
+目安は[デジタル庁のタイポグラフィ](https://design.digital.go.jp/dads/foundations/typography/)と[GOV.UKの文字サイズ](https://design-system.service.gov.uk/styles/type-scale/)を参考にしています。

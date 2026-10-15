@@ -1,4 +1,5 @@
 import './style.css';
+import './typography.css';
 import './print.css';
 import { printSheet, fitPrintSheet } from './print';
 import cities from './cities.json';
