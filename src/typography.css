@@ -1,5 +1,5 @@
-/* 画面は本文17px、操作16px、補足14pxを基本にする。A4の組版には適用しない。 */
-@media screen {
+/* PC・タブレット幅の画面のみ拡大する。スマホとA4印刷は既存の組版を使う。 */
+@media screen and (min-width: 601px) {
   :root {
     --text-body: 1.0625rem;
     --text-ui: 1rem;
@@ -97,31 +97,4 @@
     .location-grid { grid-template-columns: 1fr; }
   }
 
-  @media (max-width: 600px) {
-    .site-header { padding-right: 16px; padding-left: 16px; }
-    .brand { font-size: 1.25rem; letter-spacing: .1em; gap: 7px; }
-    .nav-cta span { margin-left: 8px; }
-    .hero h1 { font-size: clamp(1.8125rem, 9vw, 2.1875rem); }
-    .hero-copy { padding-right: 24px; padding-left: 24px; }
-    .primary-link { max-width: none; }
-    .hero-description br { display: none; }
-    .form-intro img { width: 80px; height: 140px; right: 0; }
-    .form-intro h2 { position: relative; z-index: 1; }
-    .form-intro .privacy-note { position: relative; }
-    .result-toolbar { flex-wrap: wrap; column-gap: 20px; row-gap: 6px; }
-    .result-nav { column-gap: 20px; row-gap: 0; }
-    .result-heading .birth-summary { overflow-wrap: anywhere; }
-    .nature-panel h3 { font-size: 1.5rem; max-width: none; }
-    .nature-panel .nature-symbol { opacity: .6; }
-    .reading-block h3 { font-size: 1.375rem; }
-    .pillar-table th, .pillar-table td { padding: 12px 2px; }
-    .pillar-table th:first-child { width: 19%; }
-    .luck-list, .year-list { grid-template-columns: 1fr; }
-    .luck-list li { padding: 16px; gap: 16px; }
-    .luck-list .luck-kanji { font-size: 1.75rem; }
-    .practice { align-items: flex-start; }
-    .annual-lead h4 { font-size: 1.5rem; }
-    .methods summary { padding-top: 20px; padding-bottom: 20px; }
-    .closing small { letter-spacing: .06em; }
-  }
 }

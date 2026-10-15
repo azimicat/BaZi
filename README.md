@@ -141,8 +141,8 @@ pnpm generate:og
 
 ## 画面の文字サイズ
 
-鑑定文と紹介文は17px、入力欄と操作は16px、補足文と命式表は14pxを基準にしています。
-本文の行高は文字サイズの1.85倍です。
-文字サイズはremで指定し、スマホでも本文を縮小しません。
+画面幅601px以上では、鑑定文と紹介文は17px、入力欄と操作は16px、補足文と命式表は14pxを基準にしています。
+本文の行高は文字サイズの1.85倍で、文字サイズはremで指定しています。
+画面幅600px以下のスマホでは、拡大前の文字サイズと余白、改行を維持しています。
 `src/typography.css` は画面専用で、A4印刷用の組版には適用しません。
 目安は[デジタル庁のタイポグラフィ](https://design.digital.go.jp/dads/foundations/typography/)と[GOV.UKの文字サイズ](https://design-system.service.gov.uk/styles/type-scale/)を参考にしています。
