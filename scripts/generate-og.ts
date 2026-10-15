@@ -12,9 +12,9 @@ const svg: string = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height
   ${botanical}
   <g fill="#49443d" font-family="Hiragino Mincho ProN, Yu Mincho, serif">
     <text x="75" y="99" font-size="33" letter-spacing="5">四季の命式</text>
-    <text x="75" y="254" font-size="59" letter-spacing="3">あなたの中に、</text>
+    <text x="75" y="254" font-size="59" letter-spacing="3">あなたの中に</text>
     <text x="75" y="342" font-size="59" letter-spacing="3">めぐる季節。</text>
-    <text x="78" y="432" font-size="25" letter-spacing="2">生まれた日から、あなたを知る。</text>
+    <text x="78" y="432" font-size="25" letter-spacing="2">生まれた日からあなたを知る。</text>
     <text x="78" y="479" font-size="22" letter-spacing="1">性格、仕事、恋愛、これからの運勢。</text>
   </g>
   <g fill="#926d6b" font-family="Georgia, serif">
