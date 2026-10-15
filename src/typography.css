@@ -98,3 +98,41 @@
   }
 
 }
+
+/* スマホは既存の構成を保ち、本文を2px、補足を1px程度だけ広げる。 */
+@media screen and (max-width: 600px) {
+  .hero-description,
+  .intro p:not(.eyebrow),
+  .form-intro > p:not(.eyebrow) {
+    font-size: 13px;
+    line-height: 2.1;
+  }
+  .reading-block > p,
+  .nature-panel p:not(.eyebrow),
+  .annual-lead p,
+  .year-list details p {
+    font-size: 14px;
+    line-height: 1.95;
+  }
+  .warning-box, .methods details > div {
+    font-size: 13px;
+    line-height: 1.95;
+  }
+  .field > label:first-child, .field legend, .submit-button {
+    font-size: 14px;
+  }
+  .checkbox-label, .result-nav, .year-list summary, .methods summary {
+    font-size: 12px;
+  }
+  .hero-note, .submit-note { font-size: 10px; }
+  .privacy-note { font-size: 10px !important; }
+  .field-hint, .sub-label, .result-heading .birth-summary, .luck-list small {
+    font-size: 11px;
+  }
+  .table-note { font-size: 11px !important; line-height: 1.85 !important; }
+  .reading-footnote { font-size: 11px; }
+  .pillar-table th, .pillar-table td { font-size: 11px; }
+  .pillar-table th:first-child { font-size: 10px; }
+  .element-item small { font-size: 10px; }
+  .luck-list p, .practice { font-size: 13px; }
+}
