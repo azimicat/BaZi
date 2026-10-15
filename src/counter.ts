@@ -1,4 +1,4 @@
-import { sessionCounts } from './counter-session';
+import { cookieStore, sessionCounts } from './counter-session';
 // Fixed URL: never include form values, query strings or the referrer.
 const publicUrl = new URL('https://www.azimicat.dev/BaZi/');
 const counter = document.querySelector<HTMLAnchorElement>('.visit-counter');
@@ -8,11 +8,15 @@ if (counter && text) {
   if (location.origin === publicUrl.origin && location.pathname === publicUrl.pathname) {
     const endpoint = new URL('https://hitscounter.dev/api/hit');
     endpoint.search = new URLSearchParams({ url: publicUrl.href, output: 'json', tz: 'Asia/Tokyo' }).toString();
-    void Promise.resolve().then(() => sessionCounts(sessionStorage, async () => {
+    const loadCounts = () => sessionCounts(cookieStore(document), async () => {
         const response = await fetch(endpoint, { credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store', signal: AbortSignal.timeout(8000) });
         if (!response.ok) throw new Error('Counter unavailable');
         return response.json();
-      }))
+      });
+    // Serialize simultaneous tab openings so only one sends the increment.
+    void Promise.resolve().then(() => navigator.locks
+      ? navigator.locks.request('bazi-visit-counter', loadCounts)
+      : loadCounts())
       .then(counts => {
         if (!counts) return;
         text.textContent = `views ${counts.today_hits.toLocaleString()} / ${counts.total_hits.toLocaleString()}`;
